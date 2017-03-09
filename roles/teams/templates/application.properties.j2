@@ -15,6 +15,13 @@ datasource.teams.password={{ teams.db_password }}
 datasource.teams.validation-query=SELECT 1
 datasource.teams.testWhileIdle=true
 
+datasource.grouper.driver-class-name=com.mysql.jdbc.Driver
+datasource.grouper.url=jdbc:mysql://{{ grouper.db_host }}/{{ grouper.database_name }}
+datasource.grouper.username={{ grouper.db_user }}
+datasource.grouper.password={{ grouper.db_password }}
+datasource.grouper.validation-query=SELECT 1
+datasource.grouper.testWhileIdle=true
+
 spring.jpa.properties.hibernate.naming-strategy=org.hibernate.cfg.ImprovedNamingStrategy
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
 
@@ -54,6 +61,9 @@ maxInvitations=5
 
 #Group name context
 group-name-context={{ teams.group_name_context }}
+
+#The key which restricts access to running migrations from Grouper to teams database
+migration.secret_key={{ teams_migration_secret_key }}
 
 ####################################################################
 ##
