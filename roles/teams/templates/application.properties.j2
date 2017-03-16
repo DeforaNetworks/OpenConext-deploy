@@ -59,11 +59,15 @@ systemEmail={{ instance_name }} Teams <{{ noreply_email }}>
 # Maximum amount an invitation can be sent
 maxInvitations=5
 
-#Group name context
+# Group name context
 group-name-context={{ teams.group_name_context }}
 
-#The key which restricts access to running migrations from Grouper to teams database
+# The key which restricts access to running migrations from Grouper to teams database
 migration.secret_key={{ teams_migration_secret_key }}
+
+# Username and password for VOOT access the Teams API
+voot.api.user={{ teams.voot_api_user }}
+voot.api.password={{ external_group_provider_secrets.secret }}
 
 ####################################################################
 ##
